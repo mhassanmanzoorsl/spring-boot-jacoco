@@ -3,12 +3,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean package -Dmaven.test.failure.ignore=true'
+                sh 'mvn clean package'
+               // sh 'mvn clean package -Dmaven.test.failure.ignore=true'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test -Dmaven.test.failure.ignore=true'
+                sh 'mvn test'
+                //sh 'mvn test -Dmaven.test.failure.ignore=true'
             }
         }
        // stage('Deploy') {
