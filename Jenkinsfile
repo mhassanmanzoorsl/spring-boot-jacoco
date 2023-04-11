@@ -13,6 +13,12 @@ pipeline {
                 //sh 'mvn test -Dmaven.test.failure.ignore=true'
             }
         }
+        
+        stage('Publishing Junit Tests report ') {
+            steps {
+                junit 'target/surefire-reports/*.xml'
+            }   
+        }
         stage('Publishing Code Covergae') {
             steps {
                 jacoco()
