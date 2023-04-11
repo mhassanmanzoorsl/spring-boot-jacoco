@@ -13,6 +13,11 @@ pipeline {
                 //sh 'mvn test -Dmaven.test.failure.ignore=true'
             }
         }
+        stage('Publishing Code Covergae') {
+            steps {
+                jacoco()
+            }   
+        }
        // stage('Deploy') {
        //     steps {
        //         sh 'mvn deploy'
